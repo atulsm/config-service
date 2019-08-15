@@ -1,5 +1,6 @@
 package com.atul.configservice;
 
+import com.atul.configservice.resources.BucketResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -23,7 +24,9 @@ public class ConfigServiceApplication extends Application<ConfigServiceConfigura
     @Override
     public void run(final ConfigServiceConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        System.out.println(configuration.getDefaultName());
+
+        environment.jersey().register(BucketResource.class);
     }
 
 }
