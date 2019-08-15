@@ -23,8 +23,12 @@ Health Check
 ---
 
 To see your applications health enter url `http://localhost:8088/healthcheck`
+To see metrics, enter url `http://localhost:8088/metrics`
 
 TODO
 ---
 
-1. Create a simple UI to manage the config
+1. Save bucket in Mysql db
+2. Add api automation
+3. Add dependency injection with juice
+4. Create a simple UI to manage the config

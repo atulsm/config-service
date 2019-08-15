@@ -2,6 +2,7 @@ package com.atul.configservice.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@lombok.ToString
 public class Bucket {
 
     private String name;
@@ -27,4 +28,5 @@ public class Bucket {
     public String getValue() {
         return value;
     }
+
 }

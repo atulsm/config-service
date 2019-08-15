@@ -27,4 +27,8 @@ public class BucketService {
         return buckets.remove(name)!=null ?true :false;
     }
 
+    public int count(){
+        return buckets.size();
+    }
+
 }

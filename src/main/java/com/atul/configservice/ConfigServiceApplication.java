@@ -1,5 +1,6 @@
 package com.atul.configservice;
 
+import com.atul.configservice.api.BucketServiceHealthCheck;
 import com.atul.configservice.resources.BucketResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -27,6 +28,8 @@ public class ConfigServiceApplication extends Application<ConfigServiceConfigura
         System.out.println(configuration.getDefaultName());
 
         environment.jersey().register(BucketResource.class);
+        environment.healthChecks().register("BucketCount", new BucketServiceHealthCheck());
+
     }
 
 }
