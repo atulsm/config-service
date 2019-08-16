@@ -1,34 +1,32 @@
 package com.atul.configservice.api;
 
-import javax.inject.Singleton;
-import java.util.HashMap;
-import java.util.Map;
+import com.atul.configservice.core.Bucket;
+import com.atul.configservice.db.BucketDao;
 
+//TODO Implement juice dependency injection
 public class BucketService {
-
     public static BucketService INSTANCE = new BucketService();
     private BucketService(){}
+    private BucketDao dao;
 
-    //TODO Implement database backend
-    //TODO Implement juice dependency injection
-
-    Map<String,Bucket> buckets = new HashMap<>();
+    public void init(BucketDao dao){
+        this.dao=dao;
+    }
 
     public Bucket createBucket(String name, String value){
-        buckets.put(name, new Bucket(name,value));
-        return buckets.get(name);
+        return dao.create(new Bucket(name,value));
     }
 
     public Bucket getBucket(String name){
-        return buckets.get(name);
+        return dao.find(name);
     }
 
-    public boolean deleteBucket(String name){
-        return buckets.remove(name)!=null ?true :false;
+    public void deleteBucket(String name){
+        dao.delete(name);
     }
 
     public int count(){
-        return buckets.size();
+        return 1; //TODO implement  a namedquery
     }
 
 }

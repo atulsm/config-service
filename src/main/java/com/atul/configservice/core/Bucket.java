@@ -1,14 +1,24 @@
-package com.atul.configservice.api;
+package com.atul.configservice.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @lombok.ToString
+@Entity
+@Table(name = "bucket")
+//TODO add version and dates
 public class Bucket {
 
+    @Id
+    @Column(name = "name", nullable = false)
     private String name;
-    private String value;
 
-    //TODO add version and dates
+    @Column(name = "value", nullable = false)
+    private String value;
 
     public Bucket() {
         //For jackson

@@ -1,6 +1,7 @@
 package com.atul.configservice.api;
 
 
+import com.atul.configservice.core.Bucket;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
