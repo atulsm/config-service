@@ -32,3 +32,11 @@ TODO
 2. Add api automation
 3. Add dependency injection with juice
 4. Create a simple UI to manage the config
+
+Table Creation
+---
+`create table bucket (
+        name varchar(255) not null,
+         value varchar(255) not null,
+         primary key (name)
+     ) engine=InnoDB;`

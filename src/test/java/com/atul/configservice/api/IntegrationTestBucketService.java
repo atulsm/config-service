@@ -21,7 +21,7 @@ public class IntegrationTestBucketService {
                 WebResource webResource = client.resource("http://localhost:8080/bucket/es-ip");
                 ClientResponse response = webResource.accept("application/json")
                         .get(ClientResponse.class);
-                if (response.getStatus() != 200) {
+                if (response.getStatus() > 205) {
                     throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
                 }
 
@@ -48,6 +48,6 @@ public class IntegrationTestBucketService {
         testBucketResource(attempts,false);
         long end = System.currentTimeMillis();
 
-        System.out.println(String.format("Took %d ms to process %d calls",end-start,attempts));
+        System.out.println(String.format("Took %d ms to process %d calls at QPS: %d",end-start,attempts, (attempts*1000)/(end-start)));
     }
 }

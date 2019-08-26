@@ -1,6 +1,8 @@
 package com.atul.configservice.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 @lombok.ToString
 @Entity
 @Table(name = "bucket")
+@Cache(usage= CacheConcurrencyStrategy.READ_ONLY)
 //TODO add version and dates
 public class Bucket {
 
