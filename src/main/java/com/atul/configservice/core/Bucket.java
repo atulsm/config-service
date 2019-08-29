@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @lombok.ToString
 @Entity
 @Table(name = "bucket")
-@Cache(usage= CacheConcurrencyStrategy.READ_ONLY)
+@Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
 //TODO add version and dates
 public class Bucket {
 

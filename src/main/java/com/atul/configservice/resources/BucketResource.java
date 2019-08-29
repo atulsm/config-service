@@ -14,7 +14,7 @@ public class BucketResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Timed
-    @UnitOfWork
+    @UnitOfWork(transactional = false)
     public Bucket getBucket(@PathParam("bucketName") String bucketName){
         return BucketService.INSTANCE.getBucket(bucketName);
     }

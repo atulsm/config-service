@@ -40,3 +40,11 @@ Table Creation
          value varchar(255) not null,
          primary key (name)
      ) engine=InnoDB;`
+     
+Load Test Results
+---
+Simple Lookup:
+1. Without Cache => 850 QPS
+2. With Second Level Cache => 3300 QPS
+3. With Redis => 
+4. With dummy response on request => 3800 QPS
