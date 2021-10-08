@@ -21,9 +21,14 @@ public class BucketResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Timed
     @UnitOfWork
     public Bucket createBucket(@PathParam("bucketName") String bucketName, Bucket incomingBucket){
+    	if(incomingBucket==null) {
+    		System.out.println("Receieved empty bucket");
+    		return null;
+    	}
         return BucketService.INSTANCE.createBucket(bucketName, incomingBucket.getValue());
     }
 

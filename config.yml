@@ -7,17 +7,17 @@ server:
 database:
   driverClass: com.mysql.cj.jdbc.Driver
   user: root
-  password: novell@123
+  password: root
   url: jdbc:mysql://localhost:3306/configservice
   properties:
     hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
-    hibernate.generate_statistics: true
+    hibernate.generate_statistics: false
     hibernate.show_sql: true
-    hibernate.format_sql: true
+    hibernate.format_sql: false
     hibernate.hbm2ddl.auto: update
     hibernate.cache.use_second_level_cache: true
     hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
 logging:
   level: INFO
   loggers:
-    com.atul.configservice: DEBUG
+    com.atul.configservice: INFO
